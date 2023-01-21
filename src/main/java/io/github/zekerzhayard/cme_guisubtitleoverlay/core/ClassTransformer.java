@@ -21,10 +21,10 @@ public class ClassTransformer implements IClassTransformer {
                             @Override
                             public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
                                 if (opcode == Opcodes.INVOKESTATIC && RemapUtils.checkClassName(owner, "com/google/common/collect/Lists") && RemapUtils.checkMethodName(owner, name, desc, "newArrayList") && RemapUtils.checkMethodDesc(desc, "()Ljava/util/ArrayList;")) {
-                                    this.visitTypeInsn(Opcodes.NEW, "java/util/concurrent/CopyOnWriteArrayList");
+                                    this.visitTypeInsn(Opcodes.NEW, "java/util/Vector");
                                     this.visitInsn(Opcodes.DUP);
                                     opcode = Opcodes.INVOKESPECIAL;
-                                    owner = "java/util/concurrent/CopyOnWriteArrayList";
+                                    owner = "java/util/Vector";
                                     name = "<init>";
                                     desc = "()V";
                                     itf = false;
