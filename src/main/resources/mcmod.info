@@ -1,0 +1,18 @@
+[
+    {
+        "modid": "CME_GuiSubtitleOverlay",
+        "name": "CME_GuiSubtitleOverlay",
+        "description": "",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": [
+            "ZekerZhayard"
+        ],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
