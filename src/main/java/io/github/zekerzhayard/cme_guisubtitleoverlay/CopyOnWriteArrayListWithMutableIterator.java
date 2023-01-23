@@ -117,17 +117,17 @@ public class CopyOnWriteArrayListWithMutableIterator<T> extends CopyOnWriteArray
         }
 
         public void remove() {
-            CopyOnWriteArrayListWithMutableIterator.this.remove(cursor);
+            CopyOnWriteArrayListWithMutableIterator.this.remove(snapshot[cursor - 1]);
         }
 
         @SuppressWarnings("unchecked")
         public void set(E e) {
-            CopyOnWriteArrayListWithMutableIterator.this.set(cursor, (T) e);
+            CopyOnWriteArrayListWithMutableIterator.this.set(cursor - 1, (T) e);
         }
 
         @SuppressWarnings("unchecked")
         public void add(E e) {
-            CopyOnWriteArrayListWithMutableIterator.this.add(cursor, (T) e);
+            CopyOnWriteArrayListWithMutableIterator.this.add(cursor - 1, (T) e);
         }
 
         @Override
